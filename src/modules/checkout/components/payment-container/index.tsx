@@ -6,7 +6,7 @@ import React from "react"
 
 import Radio from "@modules/common/components/radio"
 
-import PaymentManual from "../payment-manual"
+import PaymentTest from "../payment-test"
 
 type PaymentContainerProps = {
   paymentSession: PaymentSession
@@ -57,7 +57,7 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
               )}
 
             {paymentSession.provider_id === "manual" && isDevelopment && (
-              <PaymentManual className="hidden small:block" />
+              <PaymentTest className="hidden small:block" />
             )}
           </div>
           <span className="justify-self-end text-ui-fg-base">
@@ -65,7 +65,7 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
           </span>
         </div>
         {paymentSession.provider_id === "manual" && isDevelopment && (
-          <PaymentManual className="small:hidden text-[10px]" />
+          <PaymentTest className="small:hidden text-[10px]" />
         )}
       </RadioGroup.Option>
     </>
